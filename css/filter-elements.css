@@ -1,0 +1,12 @@
+ .filterElements {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background-color: rgb(204, 228, 201);
+    display: none;
+    position: relative;
+ }
+  .show-filter {
+    display: block;
+  }
+ .food-discount{
+   height: 20px;
+ }

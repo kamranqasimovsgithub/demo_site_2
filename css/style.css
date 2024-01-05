@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+@import url('filter-sidebar.css');
+@import url('addToCart.css');
+@import url('collapse.css');
+@import url('filter-elements.css');
+@import url('navbar.css');
+@import url('services.css');
+@import url('modalPopup.css');
+@import url('contact.css');
+@import url('serviceSp.css');
+
+
+
+*{
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  background-color:#4b4b4b;
+}
+
+header{
+  /* position: fixed; */
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #ff4757;
+  padding: 10px 3px;
+}

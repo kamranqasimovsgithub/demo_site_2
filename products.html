@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Məhsullar</title>
+  <link rel="stylesheet" href="css/style.css">
+
+
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>      
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">   
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  
+</head>
+<body onresize="resizeBody()">
+  <header>
+    <div class="nav">
+
+      <a href="./index.html" class="logo">
+        <ion-icon name="basket"></ion-icon>
+        Stepcompany
+      </a>
+
+      <div class="topnav " id="myTopnav">
+        <a href="#menu" class="active " onclick="myFunction()">Menyu</a>
+        <a href="./index.html">Xidmətlər</a>
+        <a href="./products.html">Məhsullar</a>
+        <a href="./contact.html">Əlaqə</a>
+        <!-- <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+          <i class="fa fa-bars"></i>
+        </a> -->
+      </div>
+
+      <div class="box">
+        <div class="cart-count">0</div>
+        <ion-icon name="cart"  id="cart-icon" ></ion-icon>
+      </div>
+
+      <div class="bg-white rounded d-flex align-items-center justify-content-between" id="header">
+        <button class="btn btn-hide" type="button" id="open-menu"><span class="fa fa-bars" id="filter-angle"></span> <span id="btn-txt"></span> </button> 
+              
+              
+      
+      <div class="cart">
+        <div class="cart-title">Səbətiniz</div>
+        <div class="cart-content">
+<!--  -->
+        </div>
+        
+      <div class="total">
+        <div class="total-title">Ümumi</div>
+        <div class="total-price">0 AZN</div>
+      </div>
+
+      <!-- <button class="btn-buy">Al</button> -->
+
+      <ion-icon name="close" id="cart-close"></ion-icon>
+
+      </div>
+    </div>
+    
+           <!-- <div class="cart-header" onclick="w3_open()">
+            <div class="cart"><i class="fa-solid fa-cart-shopping"></i><p id="count" >0</p></div>
+           </div> -->
+
+           
+    
+  </header>
+  <div class="container">
+    <div id="body-overlay"></div>
+    <div id="filterbar" class="filterbar" role="navigation">
+      <!-- <h2 onclick="">Məhsul filteri</h2> -->
+      <!-- <h2 onclick="showfilterDiscount()">Məhsul endirim</h2> -->
+
+        <button class="collapsible-button" >Kateqoriyalar</button>
+        <div class="content-collapse-1 filterBtns">
+
+          <button class="collapsible-button btn1 active" onclick="filterSelection('qulaqciq')">Qulaqcıqlar</button>
+          <div class="content-collapse-1">            
+            <ul>
+              <li>Simsiz</li>
+              <li>Ultra</li>
+              <li>Bluetooth</li>
+            </ul>  
+          </div>
+
+          <button class="collapsible-button bnt1" onclick="filterSelection('laptops')">Notebooklar</button>
+          <div class="content-collapse-1">            
+            <ul>
+              <li>Acer</li>
+              <li>Asus</li>
+              <li>Lenovo</li>
+            </ul>  
+          </div>
+
+
+        </div>
+
+        <button class="collapsible-button">Qiymət</button>
+        <div class="content-collapse-1">
+        
+          <div class="double-slider-box" id="price">
+            <!-- <h3 class="range-title">Price Range Slider</h3> -->
+            <div class="range-slider">
+              <span class="slider-track"></span>
+              <input type="range" name="min_val" class="min-val" min="1" max="400" value="20" oninput="slideMin(); addInputPrice(this.value);">
+              <input type="range" name="max_val" class="max-val" min="10" max="700" value="300" oninput="slideMax(); addInputPrice2(this.value);">
+              <div class="tooltip min-tooltip"></div>
+              <div class="tooltip max-tooltip"></div>
+            </div>
+            <div class="input-box">
+              
+              <div class="min-box">
+                <div class="input-wrap">
+                  <input type="text" name="min_input" class="input-field min-input" onchange="setMinInput();">
+                  <span class="input-addon">AZN</span>
+                </div>
+              </div>
+  
+              <div class="max-box">
+                <div class="input-wrap">
+                  <input type="text" name="max_input" class="input-field max-input" onchange="setMaxInput()">
+                  <span class="input-addon">AZN</span>
+                </div>
+              </div>
+  
+            </div>
+          </div>
+
+        </div>
+
+        <button class="collapsible-button">Satış forması</button>
+        <div class="content-collapse-1">
+            <input type="checkbox" id="sale1" class="normSale" name="sale1" value="Normal">
+            <label for="sale1" onclick="filterSelection('all')">Normal</label><br>
+            <input type="checkbox" id="sale2" class="normSale" name="sale2" value="Endirim">
+            <label for="sale2" onclick="showfilterDiscount()">Endirim</label><br>
+            <input type="button" class="clearAllCheckBoxes" value="Sıfırla" style="margin-bottom: 10px;" onclick="filterSelection('all')">
+        
+        </div>
+
+        <!-- Collapse bitdi -->
+
+
+     </div>
+    <!-- <h2 class="title">Discover the Best Food</h2> -->
+    <div class="shop-content">
+      <div class="product-list">
+
+        <div class="food-box filterElements qulaqciq trigger">
+          <div class="discount">Endirim</div>
+          <div class="pic">
+            <img src="images/headph1.png" class="food-img">
+          </div>
+          <h2 class="food-title">iPod</h2>
+          <span class="food-price">140</span>
+          <button class="add-cart">Ətraflı</button>
+        </div>
+
+        <div class="food-box filterElements laptops trigger">
+          <div class="discount">Endirim</div>
+          <div class="pic">
+            <img src="images/img.jpg" class="food-img">
+          </div>
+          <h2 class="food-title">Acer</h2>
+          <span class="food-price">240</span>
+          <button class="add-cart">Ətraflı</button>
+        </div>
+
+        <div class="food-box filterElements laptops trigger">
+          <div class="discount">Endirim</div>
+          <div class="pic">
+            <img src="images/img.jpg" class="food-img">
+          </div>
+          <h2 class="food-title">Lenovo</h2>
+          <span class="food-price">40</span>
+          <button class="add-cart">Ətraflı</button>
+        </div>
+  
+  
+        <div class="food-box filterElements qulaqciq trigger">
+          <div class="discount">Endirim</div>
+          <div class="pic"><img src="images/headph1.png" class="food-img"></div>
+          <h2 class="food-title">Modern</h2>
+          <span class="food-price">65</span>
+          <button class="add-cart">Ətraflı</button>
+        </div>
+    
+        <div class="food-box filterElements qulaqciq trigger">
+          <div class="pic"><img src="images/headph1.png" class="food-img"></div>
+          <h2 class="food-title">Simsiz</h2>
+          <span class="food-price">80</span>
+          <button class="add-cart">Ətraflı</button>
+        </div>
+    
+        <div  class="food-box filterElements laptops trigger">
+          <div class="pic"><img src="images/img.jpg" class="food-img"></div>
+          <h2 class="food-title">Asus</h2>
+          <span class="food-price">55</span>
+          <button class="add-cart">Ətraflı</button>
+        </div>
+    
+        <div class="food-box filterElements qulaqciq trigger">
+          <div class="discount">Endirim</div>
+          <div class="pic"><img src="images/headph1.png" class="food-img"></div>
+          <h2 class="food-title">Bluetooth</h2>
+          <span class="food-price">25</span>
+          <button class="add-cart">Ətraflı</button>
+        </div>
+    
+        <div class="food-box filterElements laptops trigger">
+          <div class="pic"><img src="images/img.jpg" class="food-img"></div>
+          <h2 class="food-title">Hp</h2>
+          <span class="food-price">150</span>
+          <button class="add-cart">Ətraflı</button>
+        </div>
+  
+      </div>
+      </div>
+
+      
+
+      
+  </div>
+
+  
+  <!-- <script src="js/addToCart.js"></script> -->
+  <script src="js/filter.js"></script>
+  <script src="js/collapse.js"></script>
+  <script src="js/filter-elements.js"></script>
+  <script src="js/navbar.js"></script>
+  <script src="js/modalPopup.js"></script>
+
+
+
+</body>
+</html>

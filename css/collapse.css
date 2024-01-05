@@ -1,0 +1,42 @@
+.collapsible-button {
+    background-color: #777;
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none !important;
+    font-size: 15px;
+    border: none;
+  }
+  
+  .collapse-active, .collapsible-button:hover {
+    background-color: rgba(62, 218, 56, 0.856);
+    outline: none;
+  }
+  
+  .collapsible-button:after {
+    content: '\002B';
+    color: white;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+    outline: none;
+  }
+  
+  .collapse-active:after {
+    content: "\2212";
+    outline: none;
+  }
+  
+  .content-collapse-1 {
+    padding:  0px 18px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    background-color: #f1f1f1;
+  }
+
+
+

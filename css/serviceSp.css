@@ -1,0 +1,56 @@
+.service-section{
+    background-color: cornflowerblue;
+  position: relative;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  height: 100vh;
+}
+
+
+
+th, td {
+  background-color: rgb(255, 217, 66);
+}
+
+table{
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+  border-collapse: separate;
+  border-spacing: 0;
+  overflow: hidden;  
+}
+
+th {
+  background-color: #35a748;
+  color: #FFFFFF;
+}
+thead, tbody, th, tr, td {
+  padding: 10px;
+  margin: 2px;
+}
+
+/* required css to make rounded table (below) */
+thead tr:first-child th:first-child {
+  border-top-left-radius: 10px;
+  border-bottom: 2px solid skyblue;
+}
+tr:first-child th:last-child {
+  border-top-right-radius: 10px;
+}
+tr:last-child td:first-child {
+  border-bottom-left-radius: 10px;
+}
+tr:last-child td:last-child {
+  border-bottom-right-radius: 10px;
+}
+tr:last-child th:first-child {
+  border-bottom-left-radius: 10px;
+}
+tbody tr:first-child  th:first-child {
+  border-bottom: 2px solid skyblue;
+}
+
+tbody tr:first-child td:last-child  {
+  border-bottom: 2px solid skyblue !important;
+}
